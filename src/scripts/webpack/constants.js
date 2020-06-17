@@ -2,7 +2,11 @@
 const {
   resolve
 } = require('path');
+const {
+  path: PROJECT_ROOT
+} = require('app-root-path');
 
 // the path(s) that should be cleaned
-exports.PROJECT_ROOT = resolve(__dirname, '../../');
-exports.BUILD_DIRECTORY = resolve(__dirname, '../../dist');
+exports.PROJECT_ROOT = PROJECT_ROOT;
+exports.SOURCE_DIRECTORY = resolve(PROJECT_ROOT, './src');
+exports.BUILD_DIRECTORY = resolve(PROJECT_ROOT, './dist');
