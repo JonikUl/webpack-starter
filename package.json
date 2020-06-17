@@ -4,7 +4,7 @@
   "description": "Webpack starter for frontend development",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config=./src/scripts/webpack/webpack.config.js",
     "serve": "serve \"./dist\" -s",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
