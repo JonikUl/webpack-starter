@@ -27,15 +27,15 @@ compiler.run((error, stats) => {
     entrypoints: false,
   });
 
-  console.log(chalk.greenBright('Build completed'));
+  console.log(chalk.greenBright('→ Build completed'));
   console.log(info);
 
   if (stats.hasErrors()) {
-    console.log(chalk.redBright('Error!'));
+    console.log(chalk.redBright('→ Error!'));
     console.error(info);
   }
   if (stats.hasWarnings()) {
-    console.log(chalk.yellowBright('Warning!'));
+    console.log(chalk.yellowBright('→ Warning!'));
     console.warn(info);
   }
 });

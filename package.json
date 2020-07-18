@@ -4,6 +4,7 @@
   "description": "Webpack starter for frontend development",
   "main": "index.js",
   "scripts": {
+    "start": "node \"./scripts/webpack/start.js\"",
     "build": "node \"./scripts/webpack/build.js\"",
     "serve": "serve \"./dist\" -s",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,7 +25,9 @@
     "chalk": "^4.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
+    "detect-port-alt": "^1.1.6",
     "html-webpack-plugin": "^4.3.0",
+    "inquirer": "^7.3.2",
     "mini-css-extract-plugin": "^0.9.0",
     "serve": "^11.3.2",
     "style-loader": "^1.2.1",

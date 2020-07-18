@@ -1,4 +1,7 @@
 //Core
+const {
+  HotModuleReplacementPlugin
+} = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
   CleanWebpackPlugin
@@ -25,7 +28,10 @@ const cleanOptions = {
  */
 module.exports = () => {
   return {
-    entry: SOURCE_DIRECTORY,
+    entry: [
+      'webpack-hot-middleware/client?reload=true&quiet=true',
+      SOURCE_DIRECTORY,
+    ],
     output: {
       path: BUILD_DIRECTORY,
       filename: 'main.js'
@@ -46,6 +52,7 @@ module.exports = () => {
         /* favicon: './static/favicon.ico', */
       }),
       new CleanWebpackPlugin(cleanOptions),
+      new HotModuleReplacementPlugin(),
     ]
   }
 }
