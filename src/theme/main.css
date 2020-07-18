@@ -1,0 +1,10 @@
+body {
+  min-height: 100vh;
+  /* background-color: var(--color); */
+  background-size: 100%;
+  color: #161619;
+  font-size: 33px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}

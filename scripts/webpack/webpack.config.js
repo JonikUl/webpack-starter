@@ -32,6 +32,12 @@ module.exports = () => {
     },
     mode: 'none',
     devtool: false,
+    module: {
+      rules: [{
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      }, ]
+    },
     plugins: [
       //Every plugin is constructor
       new HtmlWebpackPlugin({
