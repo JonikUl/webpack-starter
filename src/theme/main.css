@@ -1,4 +1,4 @@
-body {
+.class {
   min-height: 100vh;
   /* background-color: var(--color); */
   background-size: 100%;
@@ -8,3 +8,5 @@ body {
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
+
+@media (--phonePortrait) {}
