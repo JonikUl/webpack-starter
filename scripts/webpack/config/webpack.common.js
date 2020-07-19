@@ -1,24 +1,11 @@
 //Core
-const {
-  HotModuleReplacementPlugin
-} = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {
-  CleanWebpackPlugin
-} = require('clean-webpack-plugin');
 
 //Constants
 const {
   BUILD_DIRECTORY,
-  PROJECT_ROOT,
   SOURCE_DIRECTORY,
-} = require('./constants');
-
-//the clean options to use
-const cleanOptions = {
-  verbose: true,
-  root: PROJECT_ROOT,
-}
+} = require('../constants');
 
 /**
  * Config types
@@ -29,7 +16,6 @@ const cleanOptions = {
 module.exports = () => {
   return {
     entry: [
-      'webpack-hot-middleware/client?reload=true&quiet=true',
       SOURCE_DIRECTORY,
     ],
     output: {
@@ -37,7 +23,6 @@ module.exports = () => {
       filename: 'main.js'
     },
     mode: 'none',
-    devtool: false,
     module: {
       rules: [{
         test: /\.css$/,
@@ -51,8 +36,6 @@ module.exports = () => {
         title: 'Webpack',
         /* favicon: './static/favicon.ico', */
       }),
-      new CleanWebpackPlugin(cleanOptions),
-      new HotModuleReplacementPlugin(),
     ]
   }
 }

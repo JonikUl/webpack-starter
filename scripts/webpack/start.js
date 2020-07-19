@@ -5,7 +5,7 @@ const hot = require('webpack-hot-middleware');
 const chalk = require('chalk');
 
 //Config
-const getConfig = require('./webpack.config.js');
+const getDevConfig = require('./config/webpack.dev');
 
 //Utils
 const {
@@ -19,7 +19,7 @@ const {
 } = require('./constants');
 
 //Compiler Webpack
-const compiler = webpack(getConfig());
+const compiler = webpack(getDevConfig());
 
 (async () => {
   const choosenPort = await choosePort(PORT);
@@ -30,7 +30,7 @@ const compiler = webpack(getConfig());
     }
     const server = new DevServer(compiler, {
       host: HOST,
-      port: port,
+      port: choosenPort,
       historyApiFallback: true,
       overlay: true,
       quiet: true,

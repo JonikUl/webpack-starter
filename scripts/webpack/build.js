@@ -3,10 +3,10 @@ const webpack = require('webpack');
 const chalk = require('chalk');
 
 //Config
-const getConfig = require('./webpack.config.js');
+const getProdConfig = require('./config/webpack.prod');
 
 //Compiler Webpack
-const compiler = webpack(getConfig());
+const compiler = webpack(getProdConfig());
 
 //Run
 compiler.run((error, stats) => {
